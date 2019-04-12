@@ -1,0 +1,19 @@
+{
+  "name": "js-functions",
+  "version": "1.0.0",
+  "description": "JavaScript Functions Snippets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miraEbrahim/js-functions.git"
+  },
+  "author": "Maryam Ebrahim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miraEbrahim/js-functions/issues"
+  },
+  "homepage": "https://github.com/miraEbrahim/js-functions#readme"
+}

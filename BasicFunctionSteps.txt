@@ -1,0 +1,148 @@
+Generally speaking, a function is a "subprogram" that can be called by code external 
+(or internal in the case of recursion) to the function. 
+Like the program itself, a function is composed of a sequence of statements called the 
+function body. Values can be passed to a function, and the function will return a value.
+
+In JavaScript, functions are first-class objects, because they can have properties and 
+methods just like any other object. 
+What distinguishes them from other objects is that functions can be called. 
+In brief, they are Function objects.
+
+Let’s start by making a new HTML file with a <script> tag in it:
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Functions</title>
+    </head>
+    <body>
+        <h1>JavaScript :)</h1>
+        <script>
+            // Our script will go here!
+        </script>
+    </body>
+</html>
+Once that’s done, open it up in your web browser and you’re ready to go!
+
+initilias npm
+npm init
+install live-server to refresh page everytime a change is made
+npm install -g live-server
+
+the syntax
+For the moment, let’s look at the simplest type of function:
+
+function myFirstFunction() {
+    var x = 5;
+    alert(x * 2);
+}
+First, we’re declaring the function. We do this by saying the word function 
+and then the name of your function. 
+This is similar to how we declare variable (var variableName is 
+similar to function functionName). After the name, there is an empty set of brackets / parentheses / whatever you call these things: ().
+
+What’s the point of them if they’re empty though? Well, this is where we put inputs for the function. At the moment, our function doesn’t have any inputs so we leave it empty. I’ll get onto inputs a bit further on in this article (get excited 😉).
+
+After that, we have a set of curly brackets (the ending one is on the fourth line). Inside these curly brackets goes all the code in the function.
+
+Running (aka ‘calling’) a function
+Now you know how it works, let’s run it! Put it in your <script> tag, save, and reload the page…
+
+What!?? Nothing happened! Well, here’s the thing — we’ve only declared the function, not actually run it. We’ve just said “hey magical computer, here’s this bit of code and it’s called myFirstFunction”. However, we haven’t told the computer to run the code inside the function! Here’s how we do it:
+
+myFirstFunction();
+As you can see, we run it by referring to its name. We then have an empty set of brackets. This is where the inputs for the function would go, but we don’t have any inputs just yet so again we leave them empty. Time to run your function! See if you can work out where to put it in the code:
+
+note:
+However, you can call the function  before the function too! 
+This is very different to variables, 
+where you have to declare the variable before using it. This wouldn’t work
+
+Functions with inputs
+In the function myFirstFunction, we set a variable (x) to 5 and 
+then alerted that (10). What if we were to make a function called 
+alertDouble which alerted double any number?
+
+In this case, we’d have one input — let’s call it num. Here’s 
+how the function declaration would look with num as our input:
+
+function alertDouble(num) {
+    
+}
+Now inside the curly brackets, we can use num as a variable! 
+(only inside the curly brackets)
+
+See if you can work out how the finished function would look…
+
+function alertDouble(num){
+    var num =10;
+    alert( num * 2 );
+}
+
+alertDouble(2);
+
+Variable scopes within functions
+We’re nearly done now! 😅 However, there’s one more important thing that you need to know about functions — Variables declared inside functions do not work outside of functions. Whaaat? Here’s an example — try it out!
+
+function myFunc() {
+    var myVar = 3;
+}
+
+myFunc();
+alert(myVar);
+It should alert 3, right? Nope! Because myVar was declared inside the function, it does not exist outside the function. The code will not work and give you the following error:
+
+Uncaught ReferenceError: myVar is not defined
+
+However, this does work!
+
+var myVar = 1;
+
+function myFunc() {
+    myVar = 3;
+}
+
+myFunc();
+alert(myVar);
+The code will alert 3! Because myVar has already been declared outside the function, the code knows that it exists. It will be changed inside the function, and then the code can still alert it because it was defined outside the function.
+
+This is known as the global scope. It means that for the rest of the code, myVar will be defined. In the first example where myVar was declared inside the function, it declared in the function scope. It means that the variable will only be defined inside the curly brackets of the function.
+
+This might take a while to wrap your head around, but you’ll get it eventually. The main thing that you need to remember is that if you want to use a variable outside a function, declare it outside the function first. You don’t even have to say var myVar = 1; — you can literally just say var myVar; and that is enough. I may do an article focusing more on variable scopes in future.
+
+Conclusion
+Whew! 😅 That was a lot to cover, so good job making it all the way through! As always, keep practicing and you will eventually get it. If you need any help, feel free to shoot me an email or hit the comments.
+
+If you learned something from this article, I’d really appreciate it if you bought me a coffee. I’ve written 53,000 words and counting all for free, to help people like you learn web development. It would be really awesome if you could give me a small tip in return 😉. While it may not seem like a lot, it all adds up. If every person who read an article on this site gave $1, I’d probably be earning close to the minimum hourly wage by now!
+
+If you know someone who this article or this blog would benefit, go ahead an share it with them — they’ll thank you later 😜
+
+
+
+//*** Basic Functions ***
+//declaring the function by typing 'function', name the function 'myFirstFunction'
+function myFirstFunction(){
+    var x = 5;
+    alert( x * 2 );
+}
+
+//myFirstFunction();
+
+function alertDouble(num){
+    alert( num * 2 );
+}
+
+//alertDouble(2);
+
+function alertMultiplied(num1, num2) {
+    alert(num1 * num2);
+}
+
+function triple(num) {
+    return(num * 3);
+}
+
+//alert( triple(10) );
+
+var x = (triple(6) + 3) * 2;
+//alert(x);
